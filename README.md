@@ -1,34 +1,34 @@
-## BOSCH BME280 Library for I2C Bus to use with Arduino IDE
+# BOSCH BME280 Library for I2C Bus to use with Arduino IDE
 Tested with ESP8266-12/-07 and Arduino IDE 1.6.13 including ESP8266 Core v2.3.0
 ***
-#### 1 - Create BME280 Sensor Node
+### 1 - Create BME280 Sensor Node
 ```c++
 BME280_I2C BME280;
 ```
 ***
-#### 2 - Open I2C Bus on defined Pins
+### 2 - Open I2C Bus on defined Pins
 ```c++
 Wire.begin(GPIO_I2C_SDA, GPIO_I2C_SCL);
 ```
 ***
-#### 3 - Init BME280 on I2C
+### 3 - Init BME280 on I2C
 ```c++
 BME280.begin(BME280ADDR);
 ```
 ***
-#### 4.1 - Read Data in 'Burst Mode' from BME280
+### 4.1 - Read Data in 'Burst Mode' from BME280
 Use EITHER 'Burst' OR 'Single' Read on BME280 in one cycle! NOT BOTH !
 ```c++
 BME280.read_adc_burst();
 ```
 ***
-#### 4.2 - Read Data in 'Single Mode' from BME280
+### 4.2 - Read Data in 'Single Mode' from BME280
 Use EITHER 'Burst' OR 'Single' Read on BME280 in one cycle! NOT BOTH !
 ```c++
 BME280.read_adc_single();
 ```
 ***
-#### 5 - Print compensated BME280 ADC Data to Serial Output
+### 5 - Print compensated BME280 ADC Data to Serial Output
 ADC Values are compensated with formulas from official Bosch BME280 datasheet. Default calculation precision is 32Bit Integer, return values are Unsigned 32Bit Integer. Temperature returns a Signed 32Bit Integer. Pressure features calculation with 64Bit Integer precision, this returns an Unsigned 32Bit Integer, too. Double Precision for Calculation is also available for all ADC values, return datatype is then 'double'. Return values of 32 and 64 Bit precision functions do not carry a decimal point. You have to divide them by 100. Divide by 1000 for Humidity.
 
 
@@ -62,10 +62,10 @@ BME280 >> HUMID >> I32 >> 25023 %rH
 BME280 >> HUMID >> DBL >> 24.43 %rH
 ```
 ***
-#### 6 - Optional Functions
+### 6 - Optional Functions
 This library offers extended functions to write Oversampling Rates, StandBy Time, IIR Filter Coefficent and Mode to BME280.
 
-##### BME280 T_SB Settings - Controls inactive duration 't_standby' in normal mode. See Table.
+#### BME280 T_SB Settings - Controls inactive duration 't_standby' in normal mode. See Table.
 | Value (t_sb)    | Time (ms)     |
 |:---------------:|--------------:|
 |0b000 | 0.5|
@@ -77,7 +77,7 @@ This library offers extended functions to write Oversampling Rates, StandBy Time
 |0b110 | 10|
 |0b111 | 20|
 
-##### BME280 FILTER Settings - Controls the time constant of the IIR filter. See Table.
+#### BME280 FILTER Settings - Controls the time constant of the IIR filter. See Table.
 | Value (filter)  | Coefficent    |
 |:---------------:|--------------:|
 |0b000 | OFF |
@@ -96,7 +96,7 @@ You now can write these settings to the Sensor. This is done by using the follow
 filter_write();
 ```
 
-##### BME280 OSRS Settings - Controls the oversampling for measurements. See Table.
+#### BME280 OSRS Settings - Controls the oversampling for measurements. See Table.
 
 | Value (osrs_x)  | Rate          |
 |:---------------:|--------------:|
@@ -119,4 +119,4 @@ normal();		// Continuous switching between reading and defined StandBy Time
 ```
 
 ***
-#### Use DoxyGen (doxy/html/index.html) and Examples for further information
+### Use DoxyGen (doxy/html/index.html) and Examples for further information
