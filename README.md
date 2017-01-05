@@ -2,19 +2,19 @@
 
 BOSCH BME280 Library for I2C Bus for use with Arduino IDE
 
-##1 - Create BME280 Sensor Node
+### 1 - Create BME280 Sensor Node
 BME280_I2C BME280;
 
-##2 - Open I2C Bus on defined Pins
+### 2 - Open I2C Bus on defined Pins
 Wire.begin(GPIO_I2C_SDA, GPIO_I2C_SCL);
 
-##3 - Init BME280 on I2C
+### 3 - Init BME280 on I2C
 BME280.begin(BME280ADDR)
 
-##4 - Data in 'Burst Mode' from BME280
+### 4 - Data in 'Burst Mode' from BME280
 BME280.read_adc_burst();
 
-##5 - Print compensated BME280 ADC Data to Serial Output
+### 5 - Print compensated BME280 ADC Data to Serial Output
 * Temperature
 * *	Serial.println( String("BME280 >> TEMP  >> I32 >> ") + (int32_t) BME280.temperature()     + " C" );
 * *	Serial.println( String("BME280 >> TEMP  >> DBL >> ") + (double)  BME280.temperature_dbl() + " C" );
