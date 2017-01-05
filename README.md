@@ -30,6 +30,7 @@ BME280.read_adc_single();
 
 #### 5 - Print compensated BME280 ADC Data to Serial Output
 ADC Values are compensated with formulas from official Bosch BME280 datasheet. Default calculation precision is 32Bit Integer, return values are Unsigned 32Bit Integer. Temperature returns a Signed 32Bit Integer. Pressure features calculation with 64Bit Integer precision, this returns an Unsigned 32Bit Integer, too. Double Precision for Calculation is also available for all ADC values, return datatype is then 'double'. 
+Return values of 32 and 64 Bit precision functions do not carry a decimal point. You have to divide them by 100. Divide by 1000 for Humidity.
 * Temperature
 ```c++
 Serial.println( String("BME280 >> TEMP  >> I32 >> ") + (int32_t) BME280.temperature()     + " C" );
