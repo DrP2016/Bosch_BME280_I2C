@@ -93,12 +93,12 @@ void setup() {
     /*  
      * Write the Oversampling Rates to the BME280 and do one single Measure
      */
-    BME280.forced();
+    //BME280.forced();
     
     /*  
-     * If you want to use 'Forced Mode' you only have to run this once here! Disable 'forced()' in loop!
+     * If you want to use 'Normal Mode' you only have to run this vonce! Disable 'forced()' in loop!
      */
-    //BME280.normal();
+    BME280.normal();
     
     Serial.println("I2C  >> BME280 Configuration written!");
     Serial.println("==========================================================================");
@@ -107,9 +107,9 @@ void setup() {
 
 void loop() {
   /* 
-   * If you want to use 'Forced Mode' you have to write this everytime before reading ADC Registers
+   * If you want to use 'Forced Mode' you have to use this everytime before reading ADC Registers
    */
-  BME280.forced();
+  //BME280.forced();
   
   /*
    * Read Data in 'Single Mode' from BME280
@@ -136,11 +136,11 @@ void loop() {
   Serial.println("==========================================================================");
    
   /*
-   * Read and print current State for 1s every 2ms
+   * Read and print current State every 2ms
    */
   Serial.print("BME280 >> STATE >> Read every 2ms >> ");
-  for ( uint16_t i = 0 ; i < 500 ; i++){
-    Serial.print( BME280.state() );
+  for ( uint16_t i = 0 ; i < 100 ; i++){
+    Serial.print( (int8_t) BME280.state() );
     Serial.print(", ");
     delay(2);
   }

@@ -65,14 +65,14 @@ bool BME280_I2C::read_chip_id( uint8_t address ){
 int8_t BME280_I2C::state( void ){
 	int8_t retval = 0;
 	uint8_t bme280_state = readU8(BME280_REGISTER_STATE);
-	uint8_t bme280_measuring = bme280_state & 0b00001000;
+	uint8_t bme280_measuring = (bme280_state & 0b00001000) >> 3;
 	uint8_t bme280_im_update = bme280_state & 0b00000001;
 	if ( _inited == true ) {
 		retval = bme280_measuring<< 1 + bme280_im_update;
 	} else {
 		retval = -1;
 	}
-	return retval;
+	return (int8_t) retval;
 }
 
 /**
