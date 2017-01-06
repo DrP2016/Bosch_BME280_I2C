@@ -195,7 +195,6 @@ void BME280_I2C::read_data_burst(void){
  *  \details After reading, change BME280 Mode to 'Sleep'
  */
 void BME280_I2C::read_adc_burst(void){
-	forced();
 	read_data_burst();
 	compensate_T_int32(_adc_T);						// calculate current '_t_fine' with double precision
 }
@@ -208,7 +207,6 @@ void BME280_I2C::read_adc_burst(void){
  *  \details After reading, change BME280 Mode to 'Sleep'
  */
 void BME280_I2C::read_adc_single(void){
-	forced();
 	read_adc_P();
 	read_adc_T();
 	read_adc_H();
