@@ -93,6 +93,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3ce3c0a89ebc0ea5cd22fd2a72fb70d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e280___i2_c.html#ad3ce3c0a89ebc0ea5cd22fd2a72fb70d">begin</a> (uint8_t addr=BME280_ADDRESS)</td></tr>
 <tr class="memdesc:ad3ce3c0a89ebc0ea5cd22fd2a72fb70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Sensor.  <a href="#ad3ce3c0a89ebc0ea5cd22fd2a72fb70d">More...</a><br /></td></tr>
 <tr class="separator:ad3ce3c0a89ebc0ea5cd22fd2a72fb70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07dfbb422f75e553e876673c150fbfc1"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e280___i2_c.html#a07dfbb422f75e553e876673c150fbfc1">state</a> (void)</td></tr>
+<tr class="memdesc:a07dfbb422f75e553e876673c150fbfc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read BME280 Run State.  <a href="#a07dfbb422f75e553e876673c150fbfc1">More...</a><br /></td></tr>
+<tr class="separator:a07dfbb422f75e553e876673c150fbfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd085e5ef00260c22ee8075854327bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e280___i2_c.html#a1fd085e5ef00260c22ee8075854327bd">sleep</a> (void)</td></tr>
 <tr class="memdesc:a1fd085e5ef00260c22ee8075854327bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set BME280 to 'Sleep Mode'.  <a href="#a1fd085e5ef00260c22ee8075854327bd">More...</a><br /></td></tr>
 <tr class="separator:a1fd085e5ef00260c22ee8075854327bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +171,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8h_source.html#l00135">135</a> of file <a class="el" href="_b_m_e280___i2_c_8h_source.html">BME280_I2C.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8h_source.html#l00140">140</a> of file <a class="el" href="_b_m_e280___i2_c_8h_source.html">BME280_I2C.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0334a5227845a2e2763ba74004773ebe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0334a5227845a2e2763ba74004773ebe">&#9670;&nbsp;</a></span>altitude_dbl()</h2>
@@ -197,7 +200,7 @@ Public Member Functions</h2></td></tr>
 <p>Calculates the altitude (in meters) from the specified atmospheric pressure (in hPa), and sea-level pressure (in hPa).</p>
 <p>Formula was taken from BMP180 datasheet | 16 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00657">657</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00696">696</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +254,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Humidity in rH as as double. Output value of “46.332” represents 46.332 rH</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 49 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00378">378</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00417">417</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +284,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Humidity in RH as unsigned 32 bit integer in Q22.10 format (22 integer and 10 fractional bits)</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 23 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00352">352</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00391">391</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +314,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pressure in Pa as double. Output value of “96386.2” equals 96386.2 Pa = 963.862 hPa</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 50 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00285">285</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00324">324</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +344,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pressure in Pa as unsigned 32 bit integer. Output value of “96386” equals 96386 Pa = 963.86 hPa</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 50 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00223">223</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00262">262</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +374,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pressure in Pa as unsigned 32 bit integer. Output value of “96386” equals 96386 Pa = 963.86 hPa</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 50 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00257">257</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00296">296</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +404,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Temperature in DegC, double precision. Output value of “51.23” equals 51.23 DegC</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 49 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00333">333</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00372">372</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -431,7 +434,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Temperature in DegC, resolution is 0.01 DegC. Output value of “5123” equals 51.23 DegC</dd></dl>
 <p>Formula was taken from official BOSCH BME280 Datasheet | 23 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00314">314</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00353">353</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +474,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Set '_t_sb' and '_filter' before writing Configuration Data to BME280 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00072">72</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00113">113</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +500,7 @@ Public Member Functions</h2></td></tr>
 <p>BME280_REGISTER_CONFIG [4:2] = 'filter'</p>
 <p>BME280_REGISTER_CONFIG [1:0] = 'spi3w_en' (Ignored for I2C) </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00085">85</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00126">126</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -520,7 +523,7 @@ Public Member Functions</h2></td></tr>
 <p>Set BME280 to 'Forced Mode'. </p>
 <p>Set 'Forced Mode' by writing 'BME280_REGISTER_CONTROL' with '0b01' OR '0b10' on [1:0] </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00051">51</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00092">92</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -544,7 +547,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Humidity in RH as unsigned 32 bit integer in Q22.10 format (22 integer and 10 fractional bits)</dd></dl>
 <p>Calculate Humidity by compensating '_adc_H' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00455">455</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00494">494</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -568,7 +571,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Humidity in rH as as double. Output value of “46.332” represents 46.332 rH</dd></dl>
 <p>Calculate Humidity by compensating '_adc_H' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00466">466</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00505">505</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -591,7 +594,7 @@ Public Member Functions</h2></td></tr>
 <p>Set BME280 to 'Normal Mode'. </p>
 <p>Set 'Normal Mode' by writing 'BME280_REGISTER_CONTROL' with '0b11' on [1:0] </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00060">60</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00101">101</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -638,7 +641,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>Set 'osrs_t','osrs_p' and 'osrs_h' before writing Configuration Data to BME280 </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00105">105</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00146">146</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -672,7 +675,7 @@ Public Member Functions</h2></td></tr>
 <p>Oversampling for Humidity is written directly to 'BME280_REGISTER_CONTROLHUMID'</p>
 <p>BME280_REGISTER_CONTROLHUMID [2:0] = 'osrs_h' </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00123">123</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00164">164</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -696,7 +699,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pressure in Pa as unsigned 32 bit integer. Output value of “96386” equals 96386 Pa = 963.86 hPa</dd></dl>
 <p>Calculate Pressure by compensating '_adc_P' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00422">422</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00461">461</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -720,7 +723,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pressure in Pa as double. Output value of “96386.2” equals 96386.2 Pa = 963.862 hPa</dd></dl>
 <p>Calculate Pressure by compensating '_adc_P' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00444">444</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00483">483</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -744,7 +747,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pressure in Pa as unsigned 32 bit integer. Output value of “96386” equals 96386 Pa = 963.86 hPa</dd></dl>
 <p>Calculate Pressure with 64Bit by compensating '_adc_P' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00433">433</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00472">472</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -769,7 +772,7 @@ Public Member Functions</h2></td></tr>
 <p>Reads adc_T, adc_P, adc_H by doing a very fast 'Burst Read' on 0xF7 to 0xFE</p>
 <p>After reading, change BME280 Mode to 'Sleep' </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00156">156</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00197">197</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -794,7 +797,7 @@ Public Member Functions</h2></td></tr>
 <p>Reads adc_T, adc_P, adc_H by polling every single register by its address</p>
 <p>After reading, change BME280 Mode to 'Sleep' </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00170">170</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00210">210</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -817,7 +820,35 @@ Public Member Functions</h2></td></tr>
 <p>Set BME280 to 'Sleep Mode'. </p>
 <p>Set 'Sleep Mode' by writing 'BME280_REGISTER_CONTROL' with '0b00' on [1:0] </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00042">42</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00083">83</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a07dfbb422f75e553e876673c150fbfc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07dfbb422f75e553e876673c150fbfc1">&#9670;&nbsp;</a></span>state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t BME280_I2C::state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read BME280 Run State. </p>
+<dl class="section return"><dt>Returns</dt><dd>BME280 Run State as Signed 8Bit Integer</dd></dl>
+<p>Read Sensor State from BME280_REGISTER_STATE and splice the Repsonse.</p>
+<p>-1 &gt; Sensor not inited</p>
+<p>0 &gt; Sensor in Pause</p>
+<p>1 &gt; NVM data are being copied</p>
+<p>2 &gt; Conversion and Storing Results is running </p>
+
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00065">65</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -841,7 +872,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Temperature in DegC, resolution is 0.01 DegC. Output value of “5123” equals 51.23 DegC</dd></dl>
 <p>Calculate Temperature by compensating '_adc_T' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00400">400</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00439">439</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
@@ -865,13 +896,13 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Temperature in DegC, double precision. Output value of “51.23” equals 51.23 DegC</dd></dl>
 <p>Calculate Temperature by compensating '_adc_T' with Factory Calibration Data </p>
 
-<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00411">411</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_b_m_e280___i2_c_8cpp_source.html#l00450">450</a> of file <a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Program Files (x86)/Arduino/libraries/BME280_I2C/<a class="el" href="_b_m_e280___i2_c_8h_source.html">BME280_I2C.h</a></li>
-<li>C:/Program Files (x86)/Arduino/libraries/BME280_I2C/<a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a></li>
+<li>C:/Users/PascalD/Documents/GitHub/Bosch_BME280_I2C/<a class="el" href="_b_m_e280___i2_c_8h_source.html">BME280_I2C.h</a></li>
+<li>C:/Users/PascalD/Documents/GitHub/Bosch_BME280_I2C/<a class="el" href="_b_m_e280___i2_c_8cpp_source.html">BME280_I2C.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

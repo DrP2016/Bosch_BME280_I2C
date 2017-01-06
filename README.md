@@ -63,8 +63,23 @@ BME280 >> HUMID >> DBL >> 24.43 %rH
 ```
 ***
 ### 6 - Optional Functions
-This library offers extended functions to write Oversampling Rates, StandBy Time, IIR Filter Coefficent and Mode to BME280.
+This library offers extended functions to read the current Run State and write Oversampling Rates, StandBy Time, IIR Filter Coefficent and Mode to BME280.
 
+
+The Sensor needs to be inited before using these functions!
+
+#### BME280 Run State - Reads the current Run State of the Sensor. See Table.
+| Value (state)  | Description          |
+|:---------------:|--------------:|
+|-1 | Sensor not inited|
+|0 | Sensor in Pause|
+|1 | NVM data are being copied|
+|2 | Conversion and Storing Results is running|
+
+You have can get the current Run State from the Sensor by running the following function:
+```c++
+int8_t bme280state = BME280.state();
+```
 #### BME280 T_SB Settings - Controls inactive duration 't_standby' in normal mode. See Table.
 | Value (t_sb)    | Time (ms)     |
 |:---------------:|--------------:|
@@ -88,12 +103,12 @@ This library offers extended functions to write Oversampling Rates, StandBy Time
 
 You have to set the StandBy Time for "Normal Mode" and Filter Coefficent before writing it to the BME280 with this function:
 ```c++
-filter_config( uint8_t t_sb, uint8_t filter );
+BME280.filter_config( uint8_t t_sb, uint8_t filter );
 ```
 
 You now can write these settings to the Sensor. This is done by using the following function:
 ```c++
-filter_write();
+BME280.filter_write();
 ```
 
 #### BME280 OSRS Settings - Controls the oversampling for measurements. See Table.
@@ -109,13 +124,13 @@ filter_write();
 
 You have to set the Oversampling Rates for Temperature, Pressure and Humidity before writing it to the BME280 with this function:
 ```c++
-osrs_config(uint8_t osrs_p,uint8_t osrs_t,uint8_t osrs_h);
+BME280.osrs_config(uint8_t osrs_p,uint8_t osrs_t,uint8_t osrs_h);
 ```
 You now can write these settings to the Sensor. This is done by using one of the following functions. Each of these Functions writes the Oversampling Rate AND the wished Sensor Mode: 
 ```c++
-sleep();		// No readings are done, Registers are ok to read/write
-forced();		// One reading is done, then the Sensor is in Sleep Mode again
-normal();		// Continuous switching between reading and defined StandBy Time
+BME280.sleep();		// No readings are done, Registers are ok to read/write
+BME280.forced();		// One reading is done, then the Sensor is in Sleep Mode again
+BME280.normal();		// Continuous switching between reading and defined StandBy Time
 ```
 
 ***

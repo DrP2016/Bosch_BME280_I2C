@@ -22,16 +22,57 @@ BME280_I2C::BME280_I2C(){}
  *  \details Read Factory Calibration Data , then write custom Configuration and Mode to BME280
  */
 bool BME280_I2C::begin(uint8_t address) {
-	_i2caddr = address;
-	if (readU8(BME280_REGISTER_CHIPID) != 0x60){
-		return false;
+	if ( !read_chip_id(address) ){
+		if ( !read_chip_id(BME280_ADDRESS) ){
+			if ( !read_chip_id(BME280_ADDRESS_2) ){
+				return false;
+			}
+		}
 	}
+	_inited = true;
 	read_coeff();
 	filter_config();
 	filter_write();	
 	osrs_config();
-	normal();	
+	forced();	
 	return true;
+}
+
+/**
+ *  \brief Read BME280 ChipID "0x60" from given I2C Address
+ *  
+ *  \param [in] address I2C Address for BME280
+ *  
+ *  \details Set '_i2caddr' to given I2C Address and read ChipID from BME280_REGISTER_CHIPID
+ */
+bool BME280_I2C::read_chip_id( uint8_t address ){
+	_i2caddr = address;
+	return (bool) ( readU8(BME280_REGISTER_CHIPID) == 0x60 );
+}
+
+/**
+ *  \brief Read BME280 Run State
+ *  
+ *  \return BME280 Run State as Signed 8Bit Integer 
+ *  
+ *  \details Read Sensor State from BME280_REGISTER_STATE and splice the Repsonse.
+ *  \details -1 > Sensor not inited
+ *  \details 0 > Sensor in Pause
+ *  \details 1 > NVM data are being copied
+ *  \details 2 > Conversion and Storing Results is running
+ *  
+ */
+int8_t BME280_I2C::state( void ){
+	int8_t retval = 0;
+	uint8_t bme280_state = readU8(BME280_REGISTER_STATE);
+	uint8_t bme280_measuring = bme280_state & 0b00001000;
+	uint8_t bme280_im_update = bme280_state & 0b00000001;
+	if ( _inited == true ) {
+		retval = bme280_measuring<< 1 + bme280_im_update;
+	} else {
+		retval = -1;
+	}
+	return retval;
 }
 
 /**
@@ -154,9 +195,8 @@ void BME280_I2C::read_data_burst(void){
  *  \details After reading, change BME280 Mode to 'Sleep'
  */
 void BME280_I2C::read_adc_burst(void){
-	sleep();
+	forced();
 	read_data_burst();
-	normal();
 	compensate_T_int32(_adc_T);						// calculate current '_t_fine' with double precision
 }
 
@@ -168,11 +208,10 @@ void BME280_I2C::read_adc_burst(void){
  *  \details After reading, change BME280 Mode to 'Sleep'
  */
 void BME280_I2C::read_adc_single(void){
-	sleep();
+	forced();
 	read_adc_P();
 	read_adc_T();
 	read_adc_H();
-	normal();
 	compensate_T_int32(_adc_T);						// calculate current '_t_fine' with double precision
 }
 

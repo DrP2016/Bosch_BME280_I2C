@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BME280 Arduino Library: C:/Program Files (x86)/Arduino/libraries/BME280_I2C/BME280_I2C.h File Reference</title>
+<title>BME280 Arduino Library: C:/Users/PascalD/Documents/GitHub/Bosch_BME280_I2C/BME280_I2C.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,22 +106,25 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a632fe389011b56233474fad5bc075e4b"><td class="memItemLeft" align="right" valign="top"><a id="a632fe389011b56233474fad5bc075e4b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_ADDRESS</b>&#160;&#160;&#160;0x77</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_ADDRESS</b>&#160;&#160;&#160;0x76</td></tr>
 <tr class="separator:a632fe389011b56233474fad5bc075e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e7bdd997b4d660839c62ad520c4271"><td class="memItemLeft" align="right" valign="top"><a id="a80e7bdd997b4d660839c62ad520c4271"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_ADDRESS_2</b>&#160;&#160;&#160;0x77</td></tr>
+<tr class="separator:a80e7bdd997b4d660839c62ad520c4271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a283dd760f90bf62cb220f9f72b8aca82"><td class="memItemLeft" align="right" valign="top"><a id="a283dd760f90bf62cb220f9f72b8aca82"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_OSRS_T</b>&#160;&#160;&#160;0b010</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_OSRS_T</b>&#160;&#160;&#160;0b001</td></tr>
 <tr class="separator:a283dd760f90bf62cb220f9f72b8aca82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47f6bdff34482cabb233ea2ca08ef478"><td class="memItemLeft" align="right" valign="top"><a id="a47f6bdff34482cabb233ea2ca08ef478"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_OSRS_P</b>&#160;&#160;&#160;0b101</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_OSRS_P</b>&#160;&#160;&#160;0b001</td></tr>
 <tr class="separator:a47f6bdff34482cabb233ea2ca08ef478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2688457e697c90a2cc1d88458599e622"><td class="memItemLeft" align="right" valign="top"><a id="a2688457e697c90a2cc1d88458599e622"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_OSRS_H</b>&#160;&#160;&#160;0b001</td></tr>
 <tr class="separator:a2688457e697c90a2cc1d88458599e622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac19e1a7e4488f4d7f79bc93071a07f2e"><td class="memItemLeft" align="right" valign="top"><a id="ac19e1a7e4488f4d7f79bc93071a07f2e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_T_SB</b>&#160;&#160;&#160;0b000</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_T_SB</b>&#160;&#160;&#160;0b100</td></tr>
 <tr class="separator:ac19e1a7e4488f4d7f79bc93071a07f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab83e2ae679232129e1b49cc527fed06a"><td class="memItemLeft" align="right" valign="top"><a id="ab83e2ae679232129e1b49cc527fed06a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_FILTER</b>&#160;&#160;&#160;0b100</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BME280_FILTER</b>&#160;&#160;&#160;0b000</td></tr>
 <tr class="separator:ab83e2ae679232129e1b49cc527fed06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -157,10 +160,12 @@ Enumerations</h2></td></tr>
 <b>BME280_REGISTER_CONTROLHUMID</b> = 0xF2, 
 <b>BME280_REGISTER_CONTROL</b> = 0xF4, 
 <br />
-&#160;&#160;<b>BME280_REGISTER_CONFIG</b> = 0xF5, 
+&#160;&#160;<b>BME280_REGISTER_STATE</b> = 0xF3, 
+<b>BME280_REGISTER_CONFIG</b> = 0xF5, 
 <b>BME280_REGISTER_PRESSUREDATA</b> = 0xF7, 
 <b>BME280_REGISTER_TEMPDATA</b> = 0xFA, 
-<b>BME280_REGISTER_HUMIDDATA</b> = 0xFD
+<br />
+&#160;&#160;<b>BME280_REGISTER_HUMIDDATA</b> = 0xFD
 <br />
  }</td></tr>
 <tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,7 +182,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_8df09c2692ff8b790a19c86eae64854b.html">Program Files (x86)</a></li><li class="navelem"><a class="el" href="dir_bf89cca9688fe94c1a6743b3a764f006.html">Arduino</a></li><li class="navelem"><a class="el" href="dir_cc6187b79d5e143c0e1ff25c2a13b6bd.html">libraries</a></li><li class="navelem"><a class="el" href="dir_d3f27a99fdee67b05ded9e72acc7dfd5.html">BME280_I2C</a></li><li class="navelem"><a class="el" href="_b_m_e280___i2_c_8h.html">BME280_I2C.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_3cf042f9f600c8161416968d6387d58f.html">PascalD</a></li><li class="navelem"><a class="el" href="dir_3e5da4e28aa8b94fa2204eef9b2a609f.html">Documents</a></li><li class="navelem"><a class="el" href="dir_d6f9349928689e6a9cdc2f323c6451bb.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_a54aeaa7dc6ab381a545da66b8adcbe4.html">Bosch_BME280_I2C</a></li><li class="navelem"><a class="el" href="_b_m_e280___i2_c_8h.html">BME280_I2C.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

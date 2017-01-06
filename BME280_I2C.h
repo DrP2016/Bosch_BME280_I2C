@@ -17,7 +17,8 @@
 /***********************************************************************
  *  BME280 default I2C Address
  **********************************************************************/
-#define BME280_ADDRESS              	0x77
+#define BME280_ADDRESS              	0x76
+#define BME280_ADDRESS_2              	0x77
 
 /***********************************************************************
  *  BME280 OSRS Settings
@@ -32,8 +33,8 @@
 	 0b100	|	8
 	>0b101	|	16
  **********************************************************************/
-#define BME280_OSRS_T					0b010
-#define BME280_OSRS_P					0b101
+#define BME280_OSRS_T					0b001
+#define BME280_OSRS_P					0b001
 #define BME280_OSRS_H					0b001
 
 /***********************************************************************
@@ -51,7 +52,7 @@
 	 0b110	|	10
 	 0b111	|	20
  **********************************************************************/
-#define BME280_T_SB						0b000
+#define BME280_T_SB						0b100
 
 /***********************************************************************
  *  BME280 FILTER Settings
@@ -65,7 +66,7 @@
 	 0b011	|	8
 	>0b100	|	16
  **********************************************************************/
-#define BME280_FILTER					0b100
+#define BME280_FILTER					0b000
 
 /***********************************************************************
  *  BME280 REGISTERS
@@ -100,6 +101,7 @@ enum{
 
 	BME280_REGISTER_CONTROLHUMID       = 0xF2,
 	BME280_REGISTER_CONTROL            = 0xF4,
+	BME280_REGISTER_STATE	           = 0xF3,
 	BME280_REGISTER_CONFIG             = 0xF5,
 	BME280_REGISTER_PRESSUREDATA       = 0xF7,
 	BME280_REGISTER_TEMPDATA           = 0xFA,
@@ -132,13 +134,18 @@ typedef struct{
 	int8_t   dig_H6;
 } BME280_CALIB_DATA;
 
+/***********************************************************************
+ *  BME280_I2C CLASS
+ **********************************************************************/
 class BME280_I2C{	
 	public:
 
 		BME280_I2C(void);
 
-		bool     begin(uint8_t addr = BME280_ADDRESS);
+		bool     begin( uint8_t addr = BME280_ADDRESS );
 		
+		int8_t   state( void );
+	
 		void 	 sleep(void);
 		void 	 forced(void);
 		void 	 normal(void);
@@ -179,6 +186,7 @@ class BME280_I2C{
 
 	private:
 		void 	  read_coeff(void);
+		bool      read_chip_id( uint8_t address );
 		
 		void 	  read_data_burst(void);		
 		
@@ -200,20 +208,21 @@ class BME280_I2C{
 		uint32_t  readU24_LE(byte reg); 	// little endian
 		int32_t   readS24_LE(byte reg); 	// little endian
 
-		uint8_t   _i2caddr;
-		int32_t   _sensorID;
+		bool	  _inited 			= false;
+		uint8_t   _i2caddr			= 0x00;
+		int32_t   _sensorID			= 0x00000000;
 		
-		int32_t  _adc_P;
-		int32_t  _adc_T;
-		int32_t  _adc_H;
-		int32_t   _t_fine;
+		int32_t  _adc_P				= 0x00000000;
+		int32_t  _adc_T				= 0x00000000;
+		int32_t  _adc_H				= 0x00000000;
+		int32_t   _t_fine			= 0x00000000;
 		
-		uint8_t  _osrs_p;
-		uint8_t  _osrs_t;
-		uint8_t  _osrs_h;
+		uint8_t  _osrs_p			= 0x00;
+		uint8_t  _osrs_t			= 0x00;
+		uint8_t  _osrs_h			= 0x00;
 		
-		uint8_t  _t_sb;
-		uint8_t  _filter;	
+		uint8_t  _t_sb				= 0x00;
+		uint8_t  _filter			= 0x00;	
 
 		BME280_CALIB_DATA _bme280_calib;
 };

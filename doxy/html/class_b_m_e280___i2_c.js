@@ -24,6 +24,7 @@ var class_b_m_e280___i2_c =
     [ "read_adc_burst", "class_b_m_e280___i2_c.html#a415d05c18517ab6465f0335e7da83155", null ],
     [ "read_adc_single", "class_b_m_e280___i2_c.html#a35a427ecc74a4968658618d1963d03cf", null ],
     [ "sleep", "class_b_m_e280___i2_c.html#a1fd085e5ef00260c22ee8075854327bd", null ],
+    [ "state", "class_b_m_e280___i2_c.html#a07dfbb422f75e553e876673c150fbfc1", null ],
     [ "temperature", "class_b_m_e280___i2_c.html#a7c02e57463aeb696bd16ee67339e7329", null ],
     [ "temperature_dbl", "class_b_m_e280___i2_c.html#af9d1a6eeea90e0223615bbe288332049", null ]
 ];
